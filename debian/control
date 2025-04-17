@@ -1,3 +1,6 @@
+Source: python-daemon
+Build-Depends: debhelper (>=10), debhelper-compat (= 12), make (>= 4.2.1), ca-certificates, yarn
+Standards-Version: 4.0.0
 Package: mydaemon
 Version: 1.0
 Section: utils
