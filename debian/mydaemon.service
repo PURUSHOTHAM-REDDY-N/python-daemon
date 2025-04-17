@@ -1,0 +1,11 @@
+[Unit]
+Description=My Python Daemon
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /usr/local/bin/mydaemon.py
+Restart=always
+User=nobody
+
+[Install]
+WantedBy=multi-user.target

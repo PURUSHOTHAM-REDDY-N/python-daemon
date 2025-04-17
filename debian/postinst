@@ -1,0 +1,9 @@
+#!/bin/bash
+set -e
+
+# Enable and start the service if using systemd
+if command -v systemctl &>/dev/null; then
+    systemctl daemon-reexec
+    systemctl enable mydaemon.service
+    systemctl start mydaemon.service
+fi

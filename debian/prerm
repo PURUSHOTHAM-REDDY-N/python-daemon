@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e
+
+if command -v systemctl &>/dev/null; then
+    systemctl stop mydaemon.service || true
+    systemctl disable mydaemon.service || true
+fi

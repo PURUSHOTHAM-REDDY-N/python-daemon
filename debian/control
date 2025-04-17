@@ -1,0 +1,9 @@
+Package: mydaemon
+Version: 1.0
+Section: utils
+Priority: optional
+Architecture: all
+Depends: python3
+Maintainer: Your Name <you@example.com>
+Description: My Python background daemon
+ A simple Python daemon running in the background.
