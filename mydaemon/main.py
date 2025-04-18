@@ -1,3 +1,5 @@
+# mydaemon/main.py
+
 import time
 import threading
 import logging
@@ -14,7 +16,10 @@ def start_daemon():
     thread.start()
     logging.info("Daemon started in background.")
 
-if __name__ == "__main__":
+def main():
     start_daemon()
     while True:
         time.sleep(1)  # keep the main thread alive
+
+if __name__ == "__main__":
+    main()

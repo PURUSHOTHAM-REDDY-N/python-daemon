@@ -2,12 +2,11 @@ Source: python-daemon
 Section: utils
 Priority: optional
 Maintainer: Your Name <you@example.com>
-Build-Depends: debhelper-compat (= 12), make (>= 4.2.1), ca-certificates, yarn
+Build-Depends: debhelper (>=10), dh-python, python3, python3-setuptools
 Standards-Version: 4.0.0
-Rules-Requires-Root: no
 
 Package: mydaemon
 Architecture: all
-Depends: ${misc:Depends}, python3
-Description: My Python background daemon
- A simple Python daemon running in the background.
+Depends: ${misc:Depends}, ${python3:Depends}
+Description: Simple background Python daemon
+ A simple threaded Python daemon that logs activity every 10 seconds.
