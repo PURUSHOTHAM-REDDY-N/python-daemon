@@ -8,7 +8,7 @@ export PYBUILD_NAME=mydaemon
 
 override_dh_auto_install:
 	mkdir -p debian/mydaemon/usr/local/bin
-	cp mydaemon.py debian/mydaemon/usr/local/bin/mydaemon.py
+	cp mydaemon/main.py debian/mydaemon/usr/local/bin/mydaemon.py
 	chmod +x debian/mydaemon/usr/local/bin/mydaemon.py
 
 override_dh_installsystemd:
