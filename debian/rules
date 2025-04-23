@@ -7,8 +7,8 @@ export PYBUILD_NAME=mydaemon
 	dh $@ --with python3 --buildsystem=pybuild
 
 override_dh_auto_install:
-	mkdir -p debian/mydaemon/usr/bin
-	cp mydaemon/main.py debian/mydaemon/usr/bin/mydaemon
+	mkdir -p ~/debian/mydaemon/usr/bin
+	cp mydaemon/main.py ~/debian/mydaemon/usr/bin/mydaemon
 	chmod +x debian/mydaemon/usr/bin/mydaemon
 
 
