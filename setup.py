@@ -1,15 +1,12 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='mydaemon',
-    version='1.0',
-    description='Simple background Python daemon',
-    author='Your Name',
-    author_email='you@example.com',
-    packages=find_packages(),
+    name='python-daemon',
+    version='0.1',
+    packages=find_packages(),  # <== this is key
     entry_points={
         'console_scripts': [
-            'mydaemon = mydaemon.main:main',
-        ],
-    }
+            'mydaemon = mydaemon.main:main',  # optional if you want /usr/bin/mydaemon
+        ]
+    },
 )
