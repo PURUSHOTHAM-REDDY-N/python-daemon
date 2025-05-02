@@ -1,7 +1,10 @@
-#!/bin/bash
+#!/bin/sh
 set -e
 
-if command -v systemctl &>/dev/null; then
+if [ "$1" = "remove" ]; then
+    # Stop the service before removal
     systemctl stop mydaemon.service || true
     systemctl disable mydaemon.service || true
 fi
+
+#DEBHELPER#

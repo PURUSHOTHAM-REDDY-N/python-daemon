@@ -1,9 +1,11 @@
-#!/bin/bash
+#!/bin/sh -ex
 set -e
 
-# Enable and start the service if using systemd
-if command -v systemctl &>/dev/null; then
-    systemctl daemon-reexec
+if [ "$1" = "configure" ]; then
+    # Enable and start the service
+    systemctl daemon-reload
     systemctl enable mydaemon.service
     systemctl start mydaemon.service
 fi
+
+#DEBHELPER#

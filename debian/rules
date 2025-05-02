@@ -8,3 +8,17 @@ export PYBUILD_NAME=mydaemon
 
 override_dh_auto_clean:
 	# Prevent calling 'make clean'
+
+override_dh_installsystemd:
+	dh_installsystemd --name=mydaemon
+	# Enable the service by default
+	dh_systemd_enable --name=mydaemon
+
+override_dh_auto_install:
+	dh_auto_install
+	# Install the service file
+	install -D -m 644 debian/mydaemon.service debian/mydaemon/etc/systemd/system/mydaemon.service
+	# Create log directory
+	install -d -m 755 debian/mydaemon/var/log/mydaemon
+	# Set proper permissions
+	chmod 755 debian/mydaemon/usr/bin/mydaemon
